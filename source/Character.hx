@@ -386,7 +386,21 @@ class Character extends FlxSprite
 				loadOffsetFile(curCharacter);
 				barColor = 0xFF9a00f8;
 
-				playAnim('idle');
+				playAnim('Lulu Idle');
+				case 'Lulu':
+				// DAD ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('Lulu', 'shared', true);
+				frames = tex;
+				animation.addByPrefix('idle', 'Dad idle dance', 24, false);
+				animation.addByPrefix('Lulu Up', 'Dad Sing Note UP', 24, false);
+				animation.addByPrefix('Lulu Right', 'Dad Sing Note RIGHT', 24, false);
+				animation.addByPrefix('Lulu Down', 'Dad Sing Note DOWN', 24, false);
+				animation.addByPrefix('Lulu Left', 'Dad Sing Note LEFT', 24, false);
+				animation.addByIndices('Lulu Idle', "Dad idle dance", [11, 12], "", 12, true);
+
+				loadOffsetFile(curCharacter);
+				barColor = 0xFFddb5a9;
+				
 			default:
 				parseDataFile();
 		}
